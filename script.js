@@ -1,43 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const display = document.getElementById('display');
-    const buttons = document.querySelectorAll('.button');
-    let displayValue = '0';
-    let ans = 0;
+    const addTaskBtn = document.getElementById('add-task-btn');
+    const newTaskTitleInput = document.getElementById('new-task-title');
+    const newTaskDescInput = document.getElementById('new-task-desc');
+    const tasksList = document.getElementById('tasks-list');
 
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            const value = button.getAttribute('data-value');
+    addTaskBtn.addEventListener('click', () => {
+        const taskTitle = newTaskTitleInput.value.trim();
+        const taskDesc = newTaskDescInput.value.trim();
+        if (taskTitle !== '') {
+            const taskItem = document.createElement('li');
+            taskItem.innerHTML = `
+                <span class="task-title">${taskTitle}</span>
+                <span class="task-desc">${taskDesc}</span>
+                <button class="delete-btn">Delete</button>
+            `;
+            tasksList.appendChild(taskItem);
+            newTaskTitleInput.value = '';
+            newTaskDescInput.value = '';
+        }
+    });
 
-            if (value === 'clear') {
-                displayValue = '0';
-            } else if (value === 'del') {
-                displayValue = displayValue.slice(0, -1) || '0';
-            } else if (value === 'ans') {
-                displayValue += ans;
-            } else if (value === 'sqrt') {
-                displayValue = Math.sqrt(parseFloat(displayValue)).toString();
-            } else if (value === '=') {
-                try {
-                    ans = eval(displayValue.replace(/x/g, '*').replace(/÷/g, '/'));
-                    displayValue = ans.toString();
-                } catch {
-                    displayValue = 'Error';
-                }
-            } else if (value === '+-') {
-                if (displayValue.charAt(0) === '-') {
-                    displayValue = displayValue.slice(1);
-                } else {
-                    displayValue = '-' + displayValue;
-                }
-            } else {
-                if (displayValue === '0' || displayValue === 'Error') {
-                    displayValue = value;
-                } else {
-                    displayValue += value;
-                }
-            }
-
-            display.innerText = displayValue;
-        });
+    tasksList.addEventListener('click', (event) => {
+        if (event.target.classList.contains('delete-btn')) {
+            const taskItem = event.target.parentElement;
+            tasksList.removeChild(taskItem);
+        }
     });
 });

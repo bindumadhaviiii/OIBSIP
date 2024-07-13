@@ -3,54 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tribute to Satya Nadella</title>
+    <title>Basic To-Do App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Tribute to Satya Nadella</h1>
-            <p>CEO of Microsoft</p>
+            <h1>My To-Do List</h1>
         </header>
         <main>
-            <section class="image-section">
-                <img src="C:\Users\SHANKAR\OneDrive\projects\OASIS internship\tributepage\satya-nadella.jpg" alt="Satya Nadella">
-            </section>
-            <section class="bio-section">
-                <h2>About Satya Nadella</h2>
-                <p>Satya Narayana Nadella is an Indian-American business executive. He is the executive chairman and CEO of Microsoft, succeeding Steve Ballmer in 2014 as CEO and John W. Thompson in 2021 as chairman.</p>
-                <!-- Add more biography content here -->
-            </section>
-            <section class="timeline-section">
-                <h2>Timeline</h2>
-                <ul>
-                    <li><strong>1967:</strong> Born in Hyderabad, India.</li>
-                    <li><strong>1992:</strong> Joined Microsoft.</li>
-                    <li><strong>2014:</strong> Became CEO of Microsoft.</li>
-                    <!-- Add more timeline events here -->
-                </ul>
-            </section>
-            <section class="bio-section">
-                <h2>About Satya Nadella</h2>
-                <p>Satya Narayana Nadella is an Indian-American business executive. He is the executive chairman and CEO of Microsoft, succeeding Steve Ballmer in 2014 as CEO and John W. Thompson in 2021 as chairman.</p>
-                <p>Under his leadership, Microsoft has transformed and grown significantly, embracing cloud computing and AI technologies. Nadella is known for his empathetic leadership style and focus on innovation.</p>
-                <p>He holds a bachelor's degree in electrical engineering from Mangalore University, a master's degree in computer science from the University of Wisconsin-Milwaukee, and an MBA from the University of Chicago Booth School of Business.</p>
-            </section>
-            <section class="timeline-section">
-                <h2>Timeline</h2>
-                <ul>
-                    <li><strong>1967:</strong> Born in Hyderabad, India.</li>
-                    <li><strong>1988:</strong> Earned a bachelor's degree in electrical engineering from Mangalore University.</li>
-                    <li><strong>1990:</strong> Received a master's degree in computer science from the University of Wisconsin-Milwaukee.</li>
-                    <li><strong>1992:</strong> Joined Microsoft.</li>
-                    <li><strong>1997:</strong> Earned an MBA from the University of Chicago Booth School of Business.</li>
-                    <li><strong>2011:</strong> Became President of Microsoft's Server and Tools Division.</li>
-                    <li><strong>2014:</strong> Appointed CEO of Microsoft.</li>
-                    <li><strong>2021:</strong> Became Chairman of Microsoft.</li>
-                </ul>
-            </section>
-            
+            <div class="input-container">
+                <input type="text" id="new-task-title" placeholder="Task Title">
+                <input type="text" id="new-task-desc" placeholder="Task Description">
+                <button id="add-task-btn">Add</button>
+            </div>
+            <ul id="tasks-list"></ul>
         </main>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

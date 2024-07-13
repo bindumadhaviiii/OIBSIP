@@ -1,73 +1,95 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #e3f2fd;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    max-width: 90%;
     padding: 20px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 header {
     text-align: center;
-    padding: 20px;
+    margin-bottom: 20px;
 }
 
 header h1 {
     margin: 0;
-    color: #333;
+    color: #007BFF;
 }
 
-header p {
-    color: #777;
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-.image-section {
-    text-align: center;
-    margin: 20px 0;
+input#new-task-title,
+input#new-task-desc {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
-.image-section img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+button#add-task-btn {
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.bio-section, .timeline-section {
-    margin: 20px 0;
+button#add-task-btn:hover {
+    background-color: #0056b3;
 }
 
-.bio-section h2, .timeline-section h2 {
-    color: #333;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
-}
-
-.bio-section p, .timeline-section ul {
-    color: #555;
-    line-height: 1.6;
-}
-
-.timeline-section ul {
-    list-style: none;
+ul#tasks-list {
+    list-style-type: none;
     padding: 0;
 }
 
-.timeline-section li {
-    background: #f9f9f9;
-    margin: 10px 0;
+ul#tasks-list li {
+    background-color: #f9f9f9;
     padding: 10px;
-    border-left: 5px solid #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #333;
+ul#tasks-list li .task-title {
+    font-weight: bold;
+    color: #333;
+}
+
+ul#tasks-list li .task-desc {
+    color: #555;
+}
+
+ul#tasks-list li .delete-btn {
+    align-self: flex-end;
+    background-color: #dc3545;
+    border: none;
     color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+ul#tasks-list li .delete-btn:hover {
+    background-color: #c82333;
 }
